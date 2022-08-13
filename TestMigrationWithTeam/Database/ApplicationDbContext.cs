@@ -10,8 +10,14 @@ namespace TestMigrationWithTeam.Database
         }
         public DbSet<Person> Persons { get; set; }
         public DbSet<CountryCode> CountryCodes { get; set; }
+        public DbSet<Country> Countries { get; set; }
     }
     public class Person
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+    }
+    public class Country
     {
         public int Id { get; set; }
         public string? Name { get; set; }
