@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using TestMigrationWithTeam.Database;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<ApplicationDbContext>(
+    
+    option=>option.UseSqlServer("Server=.;Database=TeamGit;Trusted_Connection=true")
+    );
 
 var app = builder.Build();
 
