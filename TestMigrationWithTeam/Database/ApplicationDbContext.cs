@@ -11,6 +11,7 @@ namespace TestMigrationWithTeam.Database
         public DbSet<Person> Persons { get; set; }
         public DbSet<CountryCode> CountryCodes { get; set; }
         public DbSet<Country> Countries { get; set; }
+        public DbSet<Address> Addresses { get; set; }
     }
     public class Person
     {
@@ -24,6 +25,11 @@ namespace TestMigrationWithTeam.Database
     }
 
     public class CountryCode
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+    }
+    public class Address
     {
         public int Id { get; set; }
         public string? Name { get; set; }
